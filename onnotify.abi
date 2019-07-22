@@ -33,6 +33,13 @@
             "index_type": "i64",
             "key_names": [],
             "key_types": []
+        },
+        {
+            "name": "put1",
+            "type": "outstruct",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
         }
     ],
     "ricardian_clauses": [],
