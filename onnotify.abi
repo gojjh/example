@@ -9,16 +9,16 @@
             "fields": []
         },
         {
-            "name": "outstruct",
+            "name": "trxlist",
             "base": "",
             "fields": [
                 {
-                    "name": "balance",
-                    "type": "asset"
-                },
-                {
                     "name": "user",
                     "type": "name"
+                },
+                {
+                    "name": "balance",
+                    "type": "asset"
                 }
             ]
         }
@@ -32,15 +32,15 @@
     ],
     "tables": [
         {
-            "name": "receiver",
-            "type": "outstruct",
+            "name": "eosreceiver",
+            "type": "trxlist",
             "index_type": "i64",
             "key_names": [],
             "key_types": []
         },
         {
-            "name": "sender",
-            "type": "outstruct",
+            "name": "eossender",
+            "type": "trxlist",
             "index_type": "i64",
             "key_names": [],
             "key_types": []
