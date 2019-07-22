@@ -22,7 +22,7 @@ using namespace eosio;
             myTable.modify(itr, from, [&](auto& row) {
             row.balance += quantity;
         });
-    }
+    } 
     } else {
         print("you are not from");
     }
