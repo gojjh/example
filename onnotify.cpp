@@ -12,10 +12,11 @@ CONTRACT onnotify: public contract {
         [[eosio::on_notify("eosio.token::transfer")]]
     void ontransfer(name from, name to, asset quantity, std::string memo) {
         if(from == get_self()) {
-            outs myTable(get_self(), get_self().value);
+            senders myTable(get_self(), get_self().value);
         if(myTable.begin() == myTable.end()) {
             myTable.emplace(from, [&](auto& row) {
             row.balance = quantity;
+            row.user = to;
             
         });
     } else {
@@ -25,10 +26,11 @@ CONTRACT onnotify: public contract {
         });
     }
     } else if(to == get_self()){
-        puts myTable(get_self(), get_self().value);
+        recievers myTable(get_self(), get_self().value);
         if(myTable.begin() == myTable.end()){
             myTable.emplace(to, [&](auto& row){
                 row.balance = quantity;
+                row.user = from;
             });
         } else{
             auto itr = myTable.begin();
@@ -43,11 +45,12 @@ CONTRACT onnotify: public contract {
     private:
         TABLE outstruct {
             asset balance;
+            name user;
 
-    uint64_t primary_key() const { return balance.symbol.code().raw(); }
+    uint64_t primary_key() const { return user.value; }
 };
 
-typedef multi_index<"out"_n, outstruct> outs;
-typedef multi_index<"put1"_n, outstruct> puts;
+typedef multi_index<"sender"_n, outstruct> senders;
+typedef multi_index<"reciever"_n, outstruct> recievers;
 
 };

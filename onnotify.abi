@@ -15,6 +15,10 @@
                 {
                     "name": "balance",
                     "type": "asset"
+                },
+                {
+                    "name": "user",
+                    "type": "name"
                 }
             ]
         }
@@ -28,14 +32,14 @@
     ],
     "tables": [
         {
-            "name": "out",
+            "name": "reciever",
             "type": "outstruct",
             "index_type": "i64",
             "key_names": [],
             "key_types": []
         },
         {
-            "name": "put1",
+            "name": "sender",
             "type": "outstruct",
             "index_type": "i64",
             "key_names": [],
