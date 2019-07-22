@@ -32,7 +32,7 @@
     ],
     "tables": [
         {
-            "name": "reciever",
+            "name": "receiver",
             "type": "outstruct",
             "index_type": "i64",
             "key_names": [],
