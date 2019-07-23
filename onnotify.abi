@@ -9,9 +9,13 @@
             "fields": []
         },
         {
-            "name": "trxlist",
+            "name": "tradingbook_struct",
             "base": "",
             "fields": [
+                {
+                    "name": "mykey",
+                    "type": "uint64"
+                },
                 {
                     "name": "user",
                     "type": "name"
@@ -32,15 +36,15 @@
     ],
     "tables": [
         {
-            "name": "eosreceiver",
-            "type": "trxlist",
+            "name": "receiverbook",
+            "type": "tradingbook_struct",
             "index_type": "i64",
             "key_names": [],
             "key_types": []
         },
         {
-            "name": "eossender",
-            "type": "trxlist",
+            "name": "senderbook",
+            "type": "tradingbook_struct",
             "index_type": "i64",
             "key_names": [],
             "key_types": []
